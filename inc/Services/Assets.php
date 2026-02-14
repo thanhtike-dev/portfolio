@@ -46,25 +46,25 @@ final class Assets implements Hookable {
 
 		wp_enqueue_script(
 			'th-theme-gsap',
-			'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
+			$theme_uri . '/assets/vendor/gsap.min.js',
 			array(),
-			'3.12.5',
+			$this->get_asset_timestamp( $theme_dir . '/assets/vendor/gsap.min.js' ),
 			true
 		);
 
 		wp_enqueue_script(
 			'th-theme-gsap-scroll-trigger',
-			'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',
+			$theme_uri . '/assets/vendor/ScrollTrigger.min.js',
 			array( 'th-theme-gsap' ),
-			'3.12.5',
+			$this->get_asset_timestamp( $theme_dir . '/assets/vendor/ScrollTrigger.min.js' ),
 			true
 		);
 
 		wp_enqueue_script(
 			'th-theme-lenis',
-			'https://cdn.jsdelivr.net/npm/lenis@1.1.16/dist/lenis.min.js',
+			$theme_uri . '/assets/vendor/lenis.min.js',
 			array(),
-			'1.1.16',
+			$this->get_asset_timestamp( $theme_dir . '/assets/vendor/lenis.min.js' ),
 			true
 		);
 
