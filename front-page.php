@@ -39,7 +39,7 @@ get_header();
 		<div class="sec-wrap">
 			<div class="hero-inner">
 				<div class="hero-copy">
-					<p class="hero-availability"><span class="dot"></span>Available on Upwork &bull; WordPress custom themes</p>
+					<p class="hero-availability"><span class="dot"></span>Available for WordPress Projects</p>
 					<h1>
 						Hi, I'm <span>Than Htike</span><br />
 						Building Fast, High-Performance WordPress Themes

@@ -19,13 +19,14 @@ if ( '' === $site_name ) {
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="WordPress developer specializing in custom themes built from scratch. I create fast, clean, and performance-optimized business websites tailored for corporate clients and startups." />
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
 		<?php wp_body_open(); ?>
 		<div class="noise" aria-hidden="true"></div>
 		<header class="site-header">
-			<div class="brand"><?php echo esc_html( $site_name ); ?></div>
+			<div class="brand"><a class="brand-logo" href="/"><?php echo esc_html( $site_name ); ?></a></div>
 			<nav class="nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'th-theme' ); ?>">
 				<?php
 				if ( has_nav_menu( 'primary' ) ) {
