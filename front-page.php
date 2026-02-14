@@ -9,6 +9,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+$portfolio_query = new \WP_Query(
+	array(
+		'post_type'           => 'portfolio',
+		'post_status'         => 'publish',
+		'posts_per_page'      => 5,
+		'orderby'             => 'date',
+		'order'               => 'DESC',
+		'ignore_sticky_posts' => true,
+		'no_found_rows'       => true,
+	)
+);
+
+$portfolio_items       = $portfolio_query->posts;
+$featured_portfolio    = array_shift( $portfolio_items );
+$portfolio_archive_url = get_post_type_archive_link( 'portfolio' );
+$media_fallbacks       = array(
+	'project-media--featured',
+	'project-media--zenpoint',
+	'project-media--saint',
+	'project-media--studio',
+	'project-media--estate',
+);
+
 get_header();
 ?>
 <main>
@@ -129,59 +152,72 @@ get_header();
 	</section>
 
 	<section class="work" id="work">
-		<div class="sec-wrap">
-			<div class="section-title">
-				<h2>Selected work</h2>
-				<p>
-					A few recent WordPress builds. I can share more live links and details on request.
-				</p>
+		<div class="sec-wrap work-shell">
+			<div class="work-intro-col">
+				<div class="section-title">
+					<h2>Selected work</h2>
+					<p>
+						A few recent WordPress builds. I can share more live links and details on request.
+					</p>
+				</div>
+				<?php if ( $portfolio_archive_url ) : ?>
+					<a class="work-see-all" href="<?php echo esc_url( $portfolio_archive_url ); ?>">See all</a>
+				<?php else : ?>
+					<a class="work-see-all" href="#contact">See all</a>
+				<?php endif; ?>
 			</div>
-			<div class="work-grid">
-				<article class="project">
-					<div class="project-top">
-						<span class="tag">Corporate</span>
-						<span class="year">2025</span>
+			<div class="work-cards-viewport">
+				<div class="work-track">
+					<?php if ( $featured_portfolio instanceof \WP_Post ) : ?>
+						<?php
+						get_template_part(
+							'template-parts/portfolio-card',
+							null,
+							array(
+								'portfolio'       => $featured_portfolio,
+								'is_featured'     => true,
+								'fallback_class'  => $media_fallbacks[0],
+								'image_size'      => 'large',
+							)
+						);
+						?>
+					<?php endif; ?>
+					<div class="work-grid">
+						<?php if ( ! empty( $portfolio_items ) ) : ?>
+							<?php foreach ( array_values( $portfolio_items ) as $index => $portfolio_item ) : ?>
+								<?php
+								$fallback_class  = $media_fallbacks[ min( count( $media_fallbacks ) - 1, $index + 1 ) ];
+								get_template_part(
+									'template-parts/portfolio-card',
+									null,
+									array(
+										'portfolio'      => $portfolio_item,
+										'is_featured'    => false,
+										'fallback_class' => $fallback_class,
+										'image_size'     => 'medium_large',
+									)
+								);
+								?>
+							<?php endforeach; ?>
+						<?php else : ?>
+							<article class="project project-small">
+								<div class="project-media project-media--zenpoint" aria-hidden="true"></div>
+								<div class="project-body">
+									<div class="project-top">
+										<span class="tag"><?php esc_html_e( 'Portfolio', 'th-theme' ); ?></span>
+										<span class="year"><?php echo esc_html( gmdate( 'Y' ) ); ?></span>
+									</div>
+									<h3><?php esc_html_e( 'Add your first portfolio item', 'th-theme' ); ?></h3>
+									<p><?php esc_html_e( 'Create items from the Portfolios menu in WordPress admin to populate this section automatically.', 'th-theme' ); ?></p>
+									<div class="project-meta">
+										<span><?php esc_html_e( 'Admin', 'th-theme' ); ?></span>
+										<span><?php esc_html_e( 'Portfolios', 'th-theme' ); ?></span>
+									</div>
+								</div>
+							</article>
+						<?php endif; ?>
 					</div>
-					<h3>Coprosystem Corporate Site</h3>
-					<p>
-						Built a clean corporate WordPress site with a custom theme, structured content, and performance-focused pages for a professional online presence.
-					</p>
-					<div class="project-meta">
-						<span>WordPress</span>
-						<span>Custom Theme</span>
-						<span>PHP</span>
-					</div>
-				</article>
-				<article class="project">
-					<div class="project-top">
-						<span class="tag">Corporate</span>
-						<span class="year">2024</span>
-					</div>
-					<h3>SSI Corporate Website</h3>
-					<p>
-						Implemented a custom WordPress theme from an XD design, ensuring pixel-perfect responsive layout and clean, maintainable templates.
-					</p>
-					<div class="project-meta">
-						<span>WordPress</span>
-						<span>XD -&gt; Theme</span>
-						<span>Responsive</span>
-					</div>
-				</article>
-				<article class="project">
-					<div class="project-top">
-						<span class="tag">Animation</span>
-						<span class="year">2024</span>
-					</div>
-					<h3>Coprogroup Landing Site</h3>
-					<p>
-						Led the build and front-end setup, creating reusable styles and smooth animations (GSAP/Lottie-ready) for a modern corporate landing experience.
-					</p>
-					<div class="project-meta">
-						<span>WordPress</span>
-						<span>GSAP</span>
-						<span>Performance</span>
-					</div>
-				</article>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -236,8 +272,8 @@ get_header();
 					</p>
 				</div>
 				<div class="contact-actions">
-					<a class="btn primary" href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
-					<a class="btn ghost" href="https://www.linkedin.com">Upwork Profile</a>
+					<a class="btn primary viber" href="viber://chat?number=%2B959760337750" target="_blank">Message on Viber</a>
+					<a class="btn ghost" href="https://www.upwork.com/freelancers/~011e2ccd17b4181d09?mp_source=share" target="_blank">Upwork Profile</a>
 				</div>
 			</div>
 		</div>

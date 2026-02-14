@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 use THTheme\Contracts\Hookable;
 use THTheme\Services\Assets;
 use THTheme\Services\Menus;
+use THTheme\Services\PortfolioMetaBox;
+use THTheme\Services\Portfolios;
 use THTheme\Services\Setup;
 
 final class Theme {
@@ -38,6 +40,8 @@ final class Theme {
 		$this->services = array(
 			new Setup(),
 			new Menus(),
+			new Portfolios(),
+			new PortfolioMetaBox(),
 			new Assets(),
 		);
 	}
