@@ -1,0 +1,248 @@
+<?php
+/**
+ * Front page template.
+ *
+ * @package th-theme
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+get_header();
+?>
+<main>
+	<section class="hero" id="top">
+		<div class="sec-wrap">
+			<div class="hero-inner">
+				<div class="hero-copy">
+					<p class="hero-availability"><span class="dot"></span>Available on Upwork &bull; WordPress custom themes</p>
+					<h1>
+						Hi, I'm <span>Than Htike</span><br />
+						Building Fast, High-Performance WordPress Themes
+					</h1>
+					<p class="lede">
+						Fast, clean corporate websites for Japanese and global clients&mdash;built with custom PHP templates, lightweight front-end, and performance-first setup.
+					</p>
+					<div class="hero-signals">
+						<span>Custom themes (no bloat)</span>
+						<span>Performance + Core Web Vitals</span>
+						<span>SEO-friendly builds</span>
+						<span>Japanese/English communication</span>
+					</div>
+					<div class="hero-actions">
+						<a class="btn primary" href="#contact">Start Your WordPress Project</a>
+						<a class="btn ghost" href="#work">View WordPress Work</a>
+					</div>
+				</div>
+				<div class="hero-showcase">
+					<article class="hero-card hero-profile" aria-label="Profile portrait">
+						<div class="hero-portrait"></div>
+					</article>
+					<article class="hero-card hero-info">
+						<p>WordPress Custom Theme Developer</p>
+						<div class="hero-tags">
+							<span>WordPress</span>
+							<span>Custom Themes</span>
+							<span>PHP</span>
+							<span>ACF</span>
+							<span>HTML/CSS</span>
+							<span>JavaScript</span>
+						</div>
+						<div class="hero-meter" aria-hidden="true">
+							<div></div>
+						</div>
+					</article>
+					<article class="hero-card hero-brands" aria-label="Brands and platforms">
+						<p>Tools I use for WordPress builds</p>
+						<div>
+							<span>Figma</span>
+							<span>GitHub</span>
+							<span>WP-CLI</span>
+							<span>LiteSpeed</span>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="about" id="about">
+		<div class="sec-wrap">
+			<div class="section-title">
+				<h2>About</h2>
+				<p>
+					I'm a WordPress custom theme developer with a strong technical and international background. I studied web design and front-end development in Japan for 3 years and passed JLPT N1, the highest level of Japanese proficiency. I currently work as a Deputy Manager at VFS Global, while building high-quality custom WordPress themes for corporate clients and Upwork projects.
+				</p>
+			</div>
+			<div class="about-cards">
+				<article>
+					<div class="card-icon" aria-hidden="true">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+							<rect x="3" y="4" width="18" height="16" rx="2" />
+							<path d="M3 9h18" />
+						</svg>
+					</div>
+					<h3>What I do</h3>
+					<p>
+						I build bespoke WordPress themes (HTML/CSS/JS/PHP), convert Figma/XD designs into pixel-perfect pages, and create flexible components with ACF.
+					</p>
+				</article>
+				<article>
+					<div class="card-icon" aria-hidden="true">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+							<circle cx="12" cy="12" r="9" />
+							<path d="M12 7v5l3 3" />
+						</svg>
+					</div>
+					<h3>How I work</h3>
+					<p>
+						Clear milestones, clean code, and fast communication. I ship responsive pages, optimize performance, and keep everything easy to hand over.
+					</p>
+				</article>
+				<article>
+					<div class="card-icon" aria-hidden="true">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+							<path d="M12 21s-6-4.35-6-10a6 6 0 0 1 12 0c0 5.65-6 10-6 10z" />
+						</svg>
+					</div>
+					<h3>What I value</h3>
+					<p>
+						Speed, reliability, and business clarity. Your site should load fast, look trustworthy, and be simple to update&mdash;without plugin overload.
+					</p>
+				</article>
+				<article>
+					<div class="card-icon" aria-hidden="true">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+							<path d="M3 7l9-4 9 4-9 4-9-4z" />
+							<path d="M21 10v6" />
+							<path d="M7 12v4c3 2 7 2 10 0v-4" />
+						</svg>
+					</div>
+					<h3>Education &amp; Experience</h3>
+					<p>
+						Studied Web Design in Japan (2017-2020) and earned JLPT N1 certification. Currently Deputy Manager at VFS Global, with leadership experience and 20+ corporate WordPress projects delivered.
+					</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section class="work" id="work">
+		<div class="sec-wrap">
+			<div class="section-title">
+				<h2>Selected work</h2>
+				<p>
+					A few recent WordPress builds. I can share more live links and details on request.
+				</p>
+			</div>
+			<div class="work-grid">
+				<article class="project">
+					<div class="project-top">
+						<span class="tag">Corporate</span>
+						<span class="year">2025</span>
+					</div>
+					<h3>Coprosystem Corporate Site</h3>
+					<p>
+						Built a clean corporate WordPress site with a custom theme, structured content, and performance-focused pages for a professional online presence.
+					</p>
+					<div class="project-meta">
+						<span>WordPress</span>
+						<span>Custom Theme</span>
+						<span>PHP</span>
+					</div>
+				</article>
+				<article class="project">
+					<div class="project-top">
+						<span class="tag">Corporate</span>
+						<span class="year">2024</span>
+					</div>
+					<h3>SSI Corporate Website</h3>
+					<p>
+						Implemented a custom WordPress theme from an XD design, ensuring pixel-perfect responsive layout and clean, maintainable templates.
+					</p>
+					<div class="project-meta">
+						<span>WordPress</span>
+						<span>XD -&gt; Theme</span>
+						<span>Responsive</span>
+					</div>
+				</article>
+				<article class="project">
+					<div class="project-top">
+						<span class="tag">Animation</span>
+						<span class="year">2024</span>
+					</div>
+					<h3>Coprogroup Landing Site</h3>
+					<p>
+						Led the build and front-end setup, creating reusable styles and smooth animations (GSAP/Lottie-ready) for a modern corporate landing experience.
+					</p>
+					<div class="project-meta">
+						<span>WordPress</span>
+						<span>GSAP</span>
+						<span>Performance</span>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section class="skills" id="skills">
+		<div class="sec-wrap">
+			<div class="section-title">
+				<h2>Skills</h2>
+				<p>
+					WordPress-focused skills for building custom themes, fast templates, and maintainable business websites.
+				</p>
+			</div>
+			<div class="skills-grid">
+				<div class="skill-block">
+					<h3>Core</h3>
+					<ul>
+						<li>WordPress theme development</li>
+						<li>PHP templating (WP loop)</li>
+						<li>HTML / CSS (BEM) / JavaScript</li>
+						<li>ACF flexible components</li>
+					</ul>
+				</div>
+				<div class="skill-block">
+					<h3>Frameworks</h3>
+					<ul>
+						<li>Custom themes (from scratch)</li>
+						<li>Gutenberg blocks (basic)</li>
+						<li>WooCommerce (theme support)</li>
+						<li>GSAP / Lottie integration</li>
+					</ul>
+				</div>
+				<div class="skill-block">
+					<h3>Workflow</h3>
+					<ul>
+						<li>Figma/XD -&gt; WordPress build</li>
+						<li>Performance optimization</li>
+						<li>SEO-ready structure</li>
+						<li>Deployment &amp; handover</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="contact" id="contact">
+		<div class="sec-wrap">
+			<div class="contact-card">
+				<div>
+					<h2>Need a fast, custom WordPress site?</h2>
+					<p>
+						Send me your design (or references), pages you need, and timeline. I'll build a custom WordPress theme with clean code, responsive layout, and performance-first setup&mdash;ideal for Upwork projects.
+					</p>
+				</div>
+				<div class="contact-actions">
+					<a class="btn primary" href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
+					<a class="btn ghost" href="https://www.linkedin.com">Upwork Profile</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+<?php
+get_footer();

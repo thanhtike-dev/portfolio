@@ -807,3 +807,34 @@ section {
     height: 130px;
   }
 }
+
+/* WordPress nav menu output */
+.nav-list {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
