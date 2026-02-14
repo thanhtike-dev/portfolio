@@ -202,7 +202,7 @@ section {
   display: grid;
   grid-template-columns: minmax(320px, 1.1fr) minmax(280px, 0.9fr);
   gap: var(--space-lg);
-  align-items: center;
+  align-items: start;
   min-height: 84vh;
   position: relative;
   isolation: isolate;
@@ -325,20 +325,67 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .btn.primary {
-  background: linear-gradient(110deg, #101216, #1a1d23);
-  color: #f7f4ee;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, var(--accent), #ff8f5f 55%, var(--accent-2));
+  color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  letter-spacing: 0.01em;
+  box-shadow: 0 16px 34px rgba(255, 107, 74, 0.35), 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn.primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-130%) skewX(-20deg);
+  background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.45) 50%, transparent 80%);
+  transition: transform 0.55s ease;
+}
+
+.btn.primary:hover {
+  box-shadow: 0 20px 40px rgba(255, 107, 74, 0.45), 0 10px 22px rgba(0, 0, 0, 0.26);
+}
+
+.btn.primary:hover::after {
+  transform: translateX(130%) skewX(-20deg);
+}
+
+.btn.primary:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
 }
 
 .btn.ghost {
-  border: 1px solid var(--line);
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.02);
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--line) 80%, var(--accent-3) 20%);
+  color: color-mix(in srgb, var(--text) 88%, var(--accent-3) 12%);
+  background: linear-gradient(
+    140deg,
+    color-mix(in srgb, var(--bg-card) 90%, transparent),
+    color-mix(in srgb, var(--bg-soft) 92%, var(--accent-3) 8%)
+  );
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn.ghost:hover {
+  border-color: color-mix(in srgb, var(--accent-3) 70%, #ffffff 30%);
+  color: color-mix(in srgb, var(--text) 70%, var(--accent-3) 30%);
+  background: linear-gradient(
+    140deg,
+    color-mix(in srgb, var(--bg-soft) 86%, var(--accent-3) 14%),
+    color-mix(in srgb, var(--bg-card) 78%, var(--accent-3) 22%)
+  );
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(62, 212, 198, 0.25);
+}
+
+.btn.ghost:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent-3) 80%, #ffffff 20%);
+  outline-offset: 3px;
 }
 
 .btn:hover {
@@ -433,28 +480,42 @@ section {
 }
 
 .hero-brands {
-  border: none;
+  border: 1px solid var(--line);
   grid-column: 1 / span 2;
   display: grid;
-  gap: 12px;
+  gap: 10px;
   padding: 18px 22px;
-  background: linear-gradient(125deg, #5169ff, #4eb8ff 45%, #7de4da);
-  color: #fff;
-  transform: rotate(1deg);
+  background: linear-gradient(
+    140deg,
+    color-mix(in srgb, var(--bg-card) 88%, var(--accent-3) 12%),
+    color-mix(in srgb, var(--bg-soft) 92%, var(--accent) 8%)
+  );
+  color: var(--muted);
+  transform: rotate(0.4deg);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
 }
 
 .hero-brands p {
   margin: 0;
-  font-size: 0.95rem;
-  opacity: 0.95;
+  font-size: 0.88rem;
+  opacity: 0.82;
 }
 
 .hero-brands div {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.hero-brands div span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  background: color-mix(in srgb, var(--bg-soft) 84%, transparent);
+  color: color-mix(in srgb, var(--muted) 86%, var(--text) 14%);
 }
 
 .section-title h2 {
