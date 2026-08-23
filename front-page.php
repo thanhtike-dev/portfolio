@@ -273,7 +273,6 @@ get_header();
 				</div>
 				<div class="contact-actions">
 					<a class="btn primary" href="mailto:contact@thanhtike.com" target="_blank">contact@thanhtike.com</a>
-					<a class="btn ghost" href="https://www.upwork.com/freelancers/~011e2ccd17b4181d09?mp_source=share" target="_blank">Upwork Profile</a>
 				</div>
 			</div>
 		</div>
